@@ -1,29 +1,44 @@
-## Installation
+# MEMORY-CARDS
 
+## Getting Started
+These instructions will get you a copy of the project
+```
+git clone git@github.com:Tokenizers/memory-cards.git
+```
+See deployment section below to deploy the project
+
+### Prerequisites
+* docker
+
+### Installing
+
+#### Prepare installation
+
+##### API
+* Copy `api/.env.dist` to `apps/api/.env` and edit it with custom values
+
+##### Client
+* Copy `client/.env.dist` to `apps/pwa/.env` and edit it with custom values
+
+
+#### Make installation
+
+##### API & BDD
+
+ start project by using Docker
 ```bash
-yarn install
+./docker-service initialize
 ```
 
-## Usage
+NOTE : Actually the front is not included in the docker-compose due to lack of time... i will do it in the week maybe :D
 
-### Development server
-
+you can start front project manually instead
 ```bash
-yarn start
+cd client && yarn sart
 ```
 
-You can view the development server at `localhost:8080`.
 
-### Production build
+## Contributors
+### Developers
 
-```bash
-yarn run build
-```
-
-## Author
-
-- [Romain Barraud](https://www.romainbarraud.fr)
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
+* __BARRAUD Romain__ - Initial work

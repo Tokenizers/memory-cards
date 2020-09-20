@@ -1,0 +1,96 @@
+@charset "utf-8";
+@import "~bulma/bulma";
+@font-face {
+  font-family: "Roboto";
+  src: url(../fonts/Roboto-Regular.ttf);
+}
+
+@import "variables";
+
+html {
+  font-size: $root-font-size;
+  font-family: $font-family;
+  max-width: $page-width;
+  margin: 0 auto;
+  text-align: center;
+  background-color: hsl(0, 0%, 86%);
+}
+
+p {
+  font-size: $paragraph-font-size;
+}
+
+/**
+** Generation d'une classe css pour chaque sprite de fruit
+** Reference : https://www.w3schools.com/css/css_image_sprites.asp
+** Exemple : utiliser la class "fruit-0" fera apparaitre la pomme, "fruit-1" la banane etc... de haut en bas.
+**/
+
+@for $i from 0 through $fruits-list-size {
+  &.fruit-#{$i} {
+    position: relative;
+    background: no-repeat url("../images/cards.png") 0 -100px * $i;
+  }
+
+  h1 {
+    font-size: 30px;
+    font-weight: 700;
+
+
+  }
+
+  .card {
+    width: 100px;
+    height: 100px;
+    margin: $card-margin;
+    &.is-flipped {
+      background-color: $flipped;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .container {
+    width: calc(600px + 6 * (#{$card-margin} * 2));
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .start-button {
+    margin-top: 2rem;
+    border-radius: $radius-rounded;
+    color: $white;
+    background-color: $button-color;
+    transition: all .2s ease-in-out;
+    &:hover{
+      color: $white;
+      transform: scale(1.1);
+    }
+  }
+
+  progress[value] {
+    margin-top: 2rem;
+    /* Reset the default appearance */
+    -webkit-appearance: none;
+    appearance: none;
+
+    width: calc(600px + 6 * (#{$card-margin} * 2));
+    height: 20px;
+
+    &::-webkit-progress-bar {
+      background-color: #eee;
+      border-radius: 2px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+    }
+
+    &::-webkit-progress-value {
+      background-color: red;
+    }
+
+
+  }
+}

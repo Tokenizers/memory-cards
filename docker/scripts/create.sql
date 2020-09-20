@@ -1,0 +1,1 @@
+CREATE TABLE `memory_scores` (score_id bigint auto_increment, score_name varchar(30) not null, score_time int not null, primary key (score_id));
