@@ -33,9 +33,9 @@ shift "$((OPTIND-1))"
 
 # Common operations
 initialize() {
+    mkdir -p ./docker/mysql
     down
     start
-    hydrate
 }
 
 start() {
